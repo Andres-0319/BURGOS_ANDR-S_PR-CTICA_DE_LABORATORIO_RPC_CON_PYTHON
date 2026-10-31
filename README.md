@@ -22,7 +22,107 @@
 
 **Desarrollo de la actividad**
 
+<div align="center">
 
+**Actividades prácticas dirigidas (Dificultad Ascendente)**
+
+</div>
+
+<div align="center">
+
+**Desarrollo del Nivel 1: Calculadora Remota Básica (Fundamentos de RPC)**
+
+</div>
+
+**Paso 1:**
+
+**Paso 2:**
+
+**Paso 3:**
+
+**Paso 4:**
+
+**Paso 5:**
+
+<div align="center">
+
+**Desarrollo del Nivel 2: Sistema de Notificaciones con Name Server**
+
+</div>
+
+**Paso 1:**
+
+**Paso 2:**
+
+**Paso 3:**
+
+**Paso 4:**
+
+**Paso 5:**
+
+<div align="center">
+
+**Desarrollo del Nivel 3: Banco Distribuido y Control de Estado (Stateful Services)**
+
+</div>
+
+**Paso 1:**
+
+**Paso 2:**
+
+**Paso 3:**
+
+**Paso 4:**
+
+**Paso 5:**
+
+<div align="center">
+
+**Desarrollo del Nivel 4: Procesamiento Concurrente y Callback Asíncrono**
+
+</div>
+
+**Paso 1:**
+
+**Paso 2:**
+
+**Paso 3:**
+
+**Paso 4:**
+
+**Paso 5:**
+
+<div align="center">
+
+**Caso de Estudio Integrador: Sistema Distribuido de Subastas en Tiempo Real**
+
+</div>
+
+**Paso 1:**
+
+**Paso 2:**
+
+**Paso 3:**
+
+**Paso 4:**
+
+**Paso 5:**
+
+<div align="center">
+
+**Proyecto Avanzado: Autenticación Multifactor (MFA) con Bot de Telegram y Pyro4**
+
+</div>
+
+**Paso 1:**
+
+**Paso 2:**
+
+**Paso 3:**
+
+**Paso 4:**
+
+**Paso 5:**
 
 **Conclusiones**
 
