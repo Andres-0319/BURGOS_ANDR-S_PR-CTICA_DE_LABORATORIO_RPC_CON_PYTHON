@@ -50,15 +50,21 @@
 
 </div>
 
-**Paso 1:**
+**Paso 1:** Posicionados en el directorio de trabajo del proyecto mediante la ruta correspondiente, se activó el entorno virtual previamente creado utilizando la instrucción de sistema operativo source venv/bin/activate, lo cual garantizó la disponibilidad de las dependencias necesarias bajo el prefijo (venv). Con el entorno activo, se puso en marcha el servidor de nombres de Pyro4 ejecutando el comando especializado python -m Pyro4.naming, el cual establece un directorio central indispensable para la localización dinámica de objetos remotos.
 
-**Paso 2:**
+<img width="1175" height="366" alt="1" src="https://github.com/user-attachments/assets/920344c9-2cf9-4569-aa9a-dc6ee3338b06" />
 
-**Paso 3:**
+**Paso 2:** Tras navegar al directorio raíz de la práctica y activar el entorno virtual con source venv/bin/activate, se ejecutó el archivo del servidor mediante la instrucción python servidor.py. En su lógica interna, el servidor inicializó el demonio de Pyro4 y se registró dinámicamente en el Name Server bajo el nombre lógico estipulado en la guía de la práctica: practica.mensajeria. La consola del servidor confirmó el éxito de este proceso imprimiendo mensajes informativos que indicaban que el servicio estaba listo y preparado para recibir conexiones de múltiples clientes de forma concurrente, mostrando explícitamente el nombre de registro asignado.
 
-**Paso 4:**
+<img width="585" height="345" alt="2" src="https://github.com/user-attachments/assets/473d2a3c-a8a8-43fb-81da-9670010feca9" />
 
-**Paso 5:**
+**Paso 3:** Al ejecutar el script del cliente en una terminal independiente con el entorno virtual activado, el sistema realizó una consulta al Name Server localizando de forma exitosa el objeto remoto registrado bajo la URI correspondiente, lo que permitió enviar un mensaje de prueba inicial y recibir una respuesta satisfactoria del servidor confirmando el procesamiento de la notificación. Sin embargo, para comprobar la robustez y tolerancia a fallos ante la ausencia del servicio central, se simuló una interrupción apagando temporalmente el Name Server (o provocando un escenario donde el nombre no estuviera disponible), momento en el cual al intentar ejecutar nuevamente el cliente se generó de manera controlada una excepción de Pyro4 mostrando el mensaje de error [Cliente] Ocurrió un error: unknown name: practica.mensajeria.
+
+<img width="607" height="289" alt="3" src="https://github.com/user-attachments/assets/9c5e705c-2990-48cc-843b-8d4725bea536" />
+
+**Paso 4:** Tras activar el entorno virtual y ejecutar el script correspondiente, el programa estableció la conexión remota exitosamente a través del Name Server, mostrando en la consola un banner descriptivo que indicaba el inicio del "SISTEMA DE MENSAJERÍA - CLIENTE INTERACTIVO", donde se especificaba al usuario la facilidad de escribir sus mensajes presionando Enter o ingresar la palabra 'salir' para cerrar la conexión. En esta sesión interactiva, el usuario ingresó mensajes secuenciales como "hola soy cliente2 y mi nombre es cristian" y "cuando hacemos estocasticos", los cuales fueron transmitidos de manera inmediata mediante llamadas RPC al servidor central.
+
+<img width="876" height="348" alt="4" src="https://github.com/user-attachments/assets/ef0a74aa-5f2d-45a8-895d-dd2490e4365f" />
 
 <div align="center">
 
