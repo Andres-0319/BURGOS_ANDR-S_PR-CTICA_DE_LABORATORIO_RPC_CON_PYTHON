@@ -34,13 +34,9 @@
 
 </div>
 
-**Paso 1:** Al intentar ejecutar inicialmente el archivo del servidor con python3 servidor.py, el intérprete de Python arrojó de manera controlada un error de sintaxis (SyntaxError: invalid syntax) debido a una omisión tipográfica en la primera línea del código al encontrarse las importaciones import Pyro4 import time escritas de forma contigua. Tras corregir dicho detalle sintáctico en el script fuente, se reanudó la ejecución del servidor con el comando correspondiente, obteniendo un arranque exitoso que generó y expuso de manera directa la URI única del objeto remoto (PYRO:obj_c081b92085f846c18646e7b6952e7522@localhost:37607) para la identificación y conexión directa por parte del cliente.
+**Paso 1:** 
 
-<img width="752" height="277" alt="1_1" src="https://github.com/user-attachments/assets/f3601122-9010-4e79-b091-5cb3a371f0a7" />
-
-**Paso 2:** El programa cliente inició la comunicación imprimiendo el estado de envío y confirmando que la solicitud de procesamiento intensivo fue transmitida correctamente hacia el servidor central. Gracias a las ventajas del modelo asíncrono con Pyro4, el cliente demostró su capacidad de no bloquearse durante la espera de la respuesta del servidor, lo cual se evidencia de forma explícita en la consola mediante la ejecución de tareas locales paralelas reflejadas en la secuencia de mensajes "Cliente: Realizando otras tareas..." desde el número 1 hasta el 5.
-
-<img width="752" height="277" alt="1_2" src="https://github.com/user-attachments/assets/f4ab7287-2e2d-4f08-bd03-61889f8018db" />
+**Paso 2:** 
 
 <div align="center">
 
@@ -96,15 +92,13 @@
 
 </div>
 
-**Paso 1:**
+**Paso 1:** Durante el primer intento de ejecución del archivo servidor.py, la consola de comandos arrojó de manera inmediata un error de sintaxis del tipo SyntaxError: invalid syntax generado en la línea 1 debido a una omisión tipográfica al declarar las importaciones (import Pyro4 import time juntas sin separación ni salto de línea). Tras corregir dicho detalle sintáctico en el código fuente para separar adecuadamente las librerías, se reinició la ejecución del servidor dentro de la ruta ~/Documentos/N4Procesamiento, obteniendo un arranque totalmente exitoso que se confirmó en pantalla con el mensaje Servidor iniciado correctamente. Inmediatamente después, el demonio de Pyro4 expuso la URI única del objeto remoto con un identificador dinámico y un puerto aleatorio de red (por ejemplo, PYRO:obj_ad29f80d235d4ea9d554ff22bbfa88@localhost:46125), quedando el servidor listo y a la escucha de peticiones de procesamiento pesado.
 
-**Paso 2:**
+<img width="752" height="277" alt="1_1" src="https://github.com/user-attachments/assets/7eebb9a3-4a86-43e0-b4e4-5bc7386aa33f" />
 
-**Paso 3:**
+**Paso 2:** Tal como se evidencia en la consola, al poner en marcha el programa cliente se imprimió de forma secuencial la notificación de que se estaba Enviando solicitud de procesamiento..., confirmando instantes después con el mensaje Solicitud enviada correctamente. Gracias a las ventajas de la asincronía y el uso de Pyro4.asyncproxy, mientras el servidor remoto se encargaba de procesar la carga intensiva en segundo plano, el cliente aprovechó ese intervalo temporal para ejecutar de manera concurrente otras tareas locales, mostrando en pantalla iteraciones consecutivas de control bajo la leyenda Cliente: Realizando otras tareas... numeradas del 1 al 5.
 
-**Paso 4:**
-
-**Paso 5:**
+<img width="752" height="277" alt="1_2" src="https://github.com/user-attachments/assets/52859b21-615a-49db-afb0-1ad0da205855" />
 
 <div align="center">
 
