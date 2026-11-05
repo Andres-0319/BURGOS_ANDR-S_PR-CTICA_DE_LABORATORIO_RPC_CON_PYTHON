@@ -34,15 +34,13 @@
 
 </div>
 
-**Paso 1:**
+**Paso 1:** Al intentar ejecutar inicialmente el archivo del servidor con python3 servidor.py, el intérprete de Python arrojó de manera controlada un error de sintaxis (SyntaxError: invalid syntax) debido a una omisión tipográfica en la primera línea del código al encontrarse las importaciones import Pyro4 import time escritas de forma contigua. Tras corregir dicho detalle sintáctico en el script fuente, se reanudó la ejecución del servidor con el comando correspondiente, obteniendo un arranque exitoso que generó y expuso de manera directa la URI única del objeto remoto (PYRO:obj_c081b92085f846c18646e7b6952e7522@localhost:37607) para la identificación y conexión directa por parte del cliente.
 
-**Paso 2:**
+<img width="752" height="277" alt="1_1" src="https://github.com/user-attachments/assets/f3601122-9010-4e79-b091-5cb3a371f0a7" />
 
-**Paso 3:**
+**Paso 2:** El programa cliente inició la comunicación imprimiendo el estado de envío y confirmando que la solicitud de procesamiento intensivo fue transmitida correctamente hacia el servidor central. Gracias a las ventajas del modelo asíncrono con Pyro4, el cliente demostró su capacidad de no bloquearse durante la espera de la respuesta del servidor, lo cual se evidencia de forma explícita en la consola mediante la ejecución de tareas locales paralelas reflejadas en la secuencia de mensajes "Cliente: Realizando otras tareas..." desde el número 1 hasta el 5.
 
-**Paso 4:**
-
-**Paso 5:**
+<img width="752" height="277" alt="1_2" src="https://github.com/user-attachments/assets/f4ab7287-2e2d-4f08-bd03-61889f8018db" />
 
 <div align="center">
 
