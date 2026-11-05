@@ -34,9 +34,13 @@
 
 </div>
 
-**Paso 1:** 
+**Paso 1:** Al poner en marcha el script del cliente con la instrucción python cliente.py, el sistema estableció la conexión y desplegó en la consola el menú principal titulado ===== CALCULADORA CON PYRO4 =====, el cual ofrece de manera estructurada las opciones de sumar, restar, multiplicar, dividir y salir del sistema. En la primera prueba de operaciones aritméticas básicas, el usuario seleccionó la opción 1 (Sumar), ingresando de forma consecutiva los valores numéricos 15 y 7. La petición viajó a través de la red local mediante el proxy de Pyro4 hacia el servidor remoto, el cual procesó la solicitud y devolvió el resultado exacto de 22.0 reflejado de inmediato en la pantalla del cliente. Posteriormente, para comprobar el manejo robusto de errores y excepciones en la comunicación distribuida, el usuario seleccionó la opción 4 (Dividir) e intentó dividir el número 10 entre 0. El servidor interceptó la operación aritmética inválida y retornó de forma controlada el mensaje de Resultado: Error: No se puede dividir entre cero, evitando la caída del servicio remoto.
 
-**Paso 2:** 
+<img width="617" height="687" alt="1" src="https://github.com/user-attachments/assets/f8e2d4dc-44f5-458c-ba5d-a622612c9eb8" />
+
+**Paso 2:** Tras iniciar el programa cliente mediante el comando python cliente.py, se visualizó nuevamente en la interfaz de consola el menú interactivo con las opciones disponibles del servicio distribuido. En esta ocasión, el usuario seleccionó la opción 1 (Sumar) e introdujo los valores enteros 50 y 25, los cuales fueron enviados al objeto remoto de la calculadora para retornar de manera exitosa el resultado flotante de 75.0 en la pantalla. A continuación, con el objetivo de probar otro método expuesto por la clase del servidor, el usuario interactuó con la opción 3 (Multiplicar) ingresando los números 6 y 8. La invocación remota se procesó de forma sincrónica en el servidor y devolvió de manera correcta el producto equivalente a 48.0, demostrando la precisión en el transporte de argumentos y resultados a través de la red local.
+
+<img width="566" height="627" alt="2" src="https://github.com/user-attachments/assets/f02b9b66-4070-4325-862e-784f650b1585" />
 
 <div align="center">
 
