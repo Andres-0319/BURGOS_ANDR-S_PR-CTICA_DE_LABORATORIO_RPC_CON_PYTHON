@@ -110,15 +110,29 @@
 
 </div>
 
-**Paso 1:**
+**Paso 1:** Tal como se evidencia en la consola, al inicializar el programa se ejecutó el proceso de creación del sistema notificando en pantalla el mensaje Servidor de subastas creado correctamente junto con la cantidad total de elementos gestionados, que para este escenario corresponde a un total de 4 productos disponibles. Inmediatamente después, el servidor realizó de manera automática su registro en el Name Server de Pyro4 bajo el nombre estipulado en la arquitectura del caso de estudio: subastas.central, exponiendo su URI única a través de la red local.
 
-**Paso 2:**
+<img width="841" height="517" alt="imagen" src="https://github.com/user-attachments/assets/c5d28ea0-7de5-46c8-bdec-c28b47ffa2fe" />
 
-**Paso 3:**
+**Paso 2:** Al poner en marcha el programa cliente dentro del entorno virtual, este localizó de forma transparente el servicio remoto bajo el identificador subastas.central y desplegó en la consola el panel interactivo del sistema. La interfaz presentó claramente un título descriptivo denominado ========== MENÚ DE SUBASTA ========== que agrupa las opciones esenciales requeridas por la casa de subastas: la opción 1 para ver los productos disponibles, la opción 2 para seleccionar un producto específico, la opción 3 para realizar una oferta o puja, la opción 4 para consultar el estado actual de la subasta, y la opción 5 para salir de la aplicación.
 
-**Paso 4:**
+<img width="1314" height="623" alt="imagen" src="https://github.com/user-attachments/assets/ab4978fe-7b07-4501-a3b6-d5065dbcec59" />
 
-**Paso 5:**
+**Paso 3:** La consola del cliente reflejó de forma detallada cada uno de los ítems gestionados por el sistema, permitiendo a los usuarios supervisar el estado de los bienes en tiempo real. Entre los registros mostrados figuraron el producto con ID 2 correspondiente al Celular Samsung (precio inicial de $300.0), el producto con ID 3 correspondiente a la Tablet Lenovo (precio inicial de $200.0), y el producto con ID 4 correspondiente al Smartwatch Xiaomi (precio inicial de $100.0) junto con el artículo principal previamente listado.
+
+<img width="1314" height="623" alt="imagen" src="https://github.com/user-attachments/assets/8242b390-fa6a-44e0-93c4-0d33abece70c" />
+
+**Paso 4:** Como se aprecia en la ejecución del cliente, al consultar el estado de los productos o verificar el catálogo una vez transcurrido el tiempo asignado, el sistema actualizó de manera automática los parámetros temporales de cada ítem. En la consola se visualiza explícitamente que el indicador de Tiempo restante: descendió hasta marcar 0 segundos para todos los productos expuestos en el catálogo central. Como consecuencia directa de la expiración temporal, el atributo de estado de los lotes cambió de forma síncrona a la etiqueta de Estado: SUBASTA FINALIZADA para artículos como el Celular Samsung (ID 2), la Tablet Lenovo (ID 3) y el Smartwatch Xiaomi (ID 4).
+
+<img width="1314" height="623" alt="imagen" src="https://github.com/user-attachments/assets/9c4290b8-0b3a-4bde-b15b-3d9182dc6f85" />
+
+**Paso 5:** Utilizando el menú interactivo, el usuario ingresó la opción 2 correspondiente a la selección de producto, lo cual provocó que el sistema mostrara nuevamente el listado completo de los bienes disponibles con sus respectivos detalles actualizados de precios, mejores postores y el indicador de cierre de subasta. A continuación, el sistema solicitó al usuario ingresar el identificador numérico único del bien de su interés, introduciendo en este caso el valor 2 para enfocar la sesión en el Celular Samsung.
+
+<img width="1314" height="623" alt="imagen" src="https://github.com/user-attachments/assets/2d05622c-5fd1-46a7-b766-317b8eef8643" />
+
+**Paso 6:** Tras el despliegue del menú principal, el usuario seleccionó la opción 3 (Realizar una oferta) e intentó ingresar un monto monetario considerable de 100000 con la intención de pujar por el producto seleccionado previamente. La petición viajó a través de la red hacia el servidor central, el cual interceptó la transacción y ejecutó las validaciones de negocio correspondientes para verificar si la subasta seguía activa y si el monto superaba el precio actual.
+
+<img width="1314" height="623" alt="imagen" src="https://github.com/user-attachments/assets/fc49d037-713a-4288-a959-7943c48dd5b4" />
 
 <div align="center">
 
