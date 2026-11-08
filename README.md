@@ -140,17 +140,23 @@
 
 </div>
 
-**Paso 1:**
+**Paso 1:** Tras navegar al directorio correspondiente al proyecto de Telegram y asegurar la disponibilidad de las dependencias mediante la activación del entorno virtual con source venv/bin/activate, se ejecutó el script del servidor escribiendo la instrucción python servidor.py. El servidor inicializó de forma correcta mostrando el mensaje informativo de confirmación. Inmediatamente después, el demonio de Pyro4 expuso el objeto remoto encargado de gestionar las credenciales y las solicitudes de seguridad, publicando en la red local su URI única con un identificador dinámico y un puerto específico de escucha, tal como se visualiza en la línea de registro "PYRO:obj_10cdb234aeeb4d94b8ef0414b4ea42e7@localhost:43467".
 
-**Paso 2:**
+<img width="719" height="123" alt="image" src="https://github.com/user-attachments/assets/75012309-6dca-4d0b-b03c-218833861127" />
 
-**Paso 3:**
+**Paso 2:** Para comprobar la robustez del sistema de seguridad ante accesos no autorizados, en este segundo paso se evaluó el comportamiento del cliente ante credenciales incorrectas implementando el control de reintentos en el servidor. Al ejecutar el script del cliente e ingresar deliberadamente un nombre de usuario o una contraseña inválida, el servidor interceptó la llamada remota y detectó el error en los datos proporcionados. Como se observa en la consola, el sistema reaccionó de manera controlada imprimiendo advertencias claras al usuario tales como "Usuario o contraseña incorrectos. Te quedan 2 intentos".
 
-**Paso 4:**
+<img width="727" height="76" alt="image" src="https://github.com/user-attachments/assets/aa30d9ea-3cb9-4cfe-9f92-7759cd4c64fd" />
 
-**Paso 5:**
+**Paso 3:** tras superar la validación inicial de usuario y contraseña, el servidor generó un código aleatorio de 6 dígitos y se comunicó con la API de Telegram para enviarlo al chat registrado, notificando en el cliente el mensaje "Código enviado correctamente a Telegram", permitiendo evidenciar la importancia del manejo robusto de excepciones en sistemas distribuidos complejos, obligando a depurar el código fuente para asegurar que la respuesta del bot se procesara de manera limpia y sin interrumpir la estabilidad de los procedimientos remotos expuestos por el servidor.
+
+<img width="727" height="183" alt="image" src="https://github.com/user-attachments/assets/d23a9a1a-c596-43f6-a434-d55c1be0d25e" />
+
+**Paso 4:** Al enviar esta cadena mediante una llamada remota al método "verificar_codigo_mfa" del servidor Pyro4, la lógica validó la autenticidad y vigencia del token, retornando una autorización satisfactoria que imprimió en la consola del cliente el mensaje "¡Autenticación exitosa! Bienvenido..". Esta última ejecución consolidó de manera brillante la integración de tecnologías heterogéneas en un entorno distribuido, uniendo la potencia de las llamadas a procedimientos remotos con servicios externos de mensajería en tiempo real para garantizar un nivel superior de seguridad informática.
+
+<img width="727" height="630" alt="image" src="https://github.com/user-attachments/assets/6ff947f5-f276-4d6b-b075-c1c6307a0540" />
 
 **Conclusiones**
 
-- **CONCLUSION 1**
-- **CONCLUSION 2**
+- La implementación de la arquitectura cliente-servidor basada en Llamadas a Procedimientos Remotos (RPC) utilizando la biblioteca Pyro4 en Python demostró ser un mecanismo altamente eficiente y transparente para el desarrollo de sistemas distribuidos. A lo largo de los diferentes niveles de la práctica, desde la calculadora básica hasta los esquemas avanzados de autenticación y subastas, se comprobó que el uso de proxies permite abstraer la complejidad de la red, haciendo que la invocación de métodos remotos se perciba de manera idéntica a una llamada a funciones locales.
+- Durante las pruebas con varios clientes ejecutándose en paralelo, se corroboró que el servidor es capaz de crear espacios de memoria independientes para cada sesión de cliente, evitando condiciones de carrera, la mezcla indeseada de saldos o interferencias en las pujas en tiempo real. Esto demuestra que la plataforma maneja de forma nativa la concurrencia multi-hilo, cumpliendo a cabalidad con los requerimientos de persistencia transaccional exigidos en aplicaciones distribuidas complejas.
